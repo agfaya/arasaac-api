@@ -3,11 +3,21 @@
 const mongoose = require('mongoose');
 const Schema = mongoose.Schema;
 const bcrypt = require('bcrypt-nodejs');
+const jwt = require('jwt-simple');
 
 const userSchema = new Schema ({
-    email: {type: String, unique: true, lowercase: true},
-    name: String,
-    password: String,
+    email: {type: String, unique: true, lowercase: true,
+        validate: {
+            validator: function(v) {
+                return /^([\w-\.]+@([\w-]+\.)+[\w-]{2,4})?$/.test(v);
+            },
+            message: props => `${props.value} is not a valid email!`
+        },
+        required: [true, 'User email required']
+    },
+    name: {type: String, required: true},
+    password: {type: String, select: true, required: true},
+    permissions: {type: String, default: 'r'},
     signupDate: {type: Date, default: Date.now()},
     lastLogin: Date
 });
@@ -31,6 +41,12 @@ userSchema.methods.comparePassword = function(candidatePassword, cb) {
         if (err) return cb(err);
         cb(null, isMatch);
     });
+};
+
+userSchema.methods.toJSON = function() {
+    var obj = this.toObject();
+    delete obj.password;
+    return obj;
 };
 
 module.exports = mongoose.model('user', userSchema);

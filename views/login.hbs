@@ -4,21 +4,34 @@
     <input type="password" name="password" value="" placeholder="Password">
     <br><br>
     <input type="submit" value="Login">
+    <br>
+    <br>
+    <p id="token"></p>
 </form>
 
 <script type="text/javascript">
     const formLogin = document.querySelector('#login');
-    const formData = new FormData(formLogin);
 
     formLogin.addEventListener('submit', event => {
         event.preventDefault();
+        const formData = new FormData(formLogin);
+        var obJSON = {};
+
+        formData.forEach(function (value, key) {
+			obJSON[key] = value;
+		});
+		
         fetch('/api/signin', {
             method: 'POST',
-            body: formData
-        })
+            body: JSON.stringify(obJSON),
+			headers:{
+				"Content-Type":"application/json;charset=UTF-8"
+			}
+		})
         .then(res => res.json())
         .then(data => {
-            localStorage.setItem('token', data.token)
+            localStorage.setItem('token', data.token);
+            document.getElementById("token").innerHTML = localStorage.getItem('token');
         })
     })
 </script>

@@ -1,7 +1,9 @@
 'use strict';
 
+const path = require('path');
 const jwt = require('jwt-simple');
 const moment = require('moment');
+const multer = require('multer');
 const config = require('../config');
 
 function createToken (user){
@@ -10,8 +12,8 @@ function createToken (user){
         iat: moment().unix(),
         exp: moment().add(7, 'days').unix()
     };
-
-    return jwt.encode(payload, config.SECRET_TOKEN)
+    const token = jwt.encode(payload, config.SECRET_TOKEN);
+    return token
 }
 
 function decodeToken (token) {
@@ -35,7 +37,28 @@ function decodeToken (token) {
     return decoded
 }
 
+var storage = multer.diskStorage({
+    destination: function (req, file, cb) {
+        cb(null, './uploads/')
+    },
+    filename: function (req, file, cb) {
+        cb(null, file.fieldname + path.extname(file.originalname));
+    }
+});
+
+var uploadPictograms = multer({
+    storage: storage,
+    fileFilter: function(req, file, callback) { //file filter
+        var ext = path.extname(file.originalname);
+        if(ext !== '.xlsx') {
+            return callback(new Error('Wrong extension type'));
+        }
+        callback(null, true);
+    }
+}).single('file');
+
 module.exports = {
     createToken,
-    decodeToken
+    decodeToken,
+    uploadPictograms
 };

@@ -4,11 +4,11 @@ const mongoose = require('mongoose');
 const Schema = mongoose.Schema;
 
 const pictogramSchema = Schema ({
-    name: String,
+    name: { type : String, required: true },
     description: String,
-    img: String,
+    img: String ,
     sound: String,
-    category: {type: String, enum: ['alphabet', 'adjectives']}
+    category: String
 });
 
 module.exports = mongoose.model('pictogram', pictogramSchema);
