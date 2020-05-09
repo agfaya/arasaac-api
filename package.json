@@ -14,7 +14,6 @@
     "body-parser": "^1.18.3",
     "express": "^4.16.4",
     "express-handlebars": "^3.0.0",
-    "express-session": "^1.17.0",
     "express-validator": "^6.2.0",
     "jwt-simple": "^0.5.5",
     "moment": "^2.24.0",
@@ -33,4 +32,3 @@
     "url": "http://localhost:3000/api"
   }
 }
-

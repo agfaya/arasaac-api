@@ -1,0 +1,433 @@
+[
+  {
+    "type": "get",
+    "url": "/categories/",
+    "title": "Request Categories information",
+    "name": "GetCategories",
+    "group": "Category",
+    "success": {
+      "fields": {
+        "Success 200": [
+          {
+            "group": "Success 200",
+            "type": "String",
+            "optional": false,
+            "field": "name",
+            "description": "<p>Category name.</p>"
+          },
+          {
+            "group": "Success 200",
+            "type": "String",
+            "optional": false,
+            "field": "description",
+            "description": "<p>Category description.</p>"
+          }
+        ]
+      },
+      "examples": [
+        {
+          "title": "Success-Response:",
+          "content": "HTTP/1.1 200 OK\n{\n\t    \"_id\": \"5cdef979fb6fc00aaf763f20\",\n\t    \"name\": \"alphabet\",\n\t    \"description\": \"contains the alphabet letters\"\n}",
+          "type": "json"
+        }
+      ]
+    },
+    "error": {
+      "fields": {
+        "Error 4xx": [
+          {
+            "group": "Error 4xx",
+            "optional": false,
+            "field": "CategoryNotFound",
+            "description": "<p>The id of the Category was not found.</p>"
+          }
+        ]
+      },
+      "examples": [
+        {
+          "title": "Error-Response:",
+          "content": "HTTP/1.1 404 Not Found\n{\n  \"error\": \"CategoryNotFound\"\n}",
+          "type": "json"
+        }
+      ]
+    },
+    "version": "0.0.0",
+    "filename": "routes/index.js",
+    "groupTitle": "Category"
+  },
+  {
+    "type": "get",
+    "url": "/categories/:id",
+    "title": "Request Category information",
+    "name": "GetCategory",
+    "group": "Category",
+    "parameter": {
+      "fields": {
+        "Parameter": [
+          {
+            "group": "Parameter",
+            "type": "category_id",
+            "optional": false,
+            "field": "id",
+            "description": "<p>Category unique ID.</p>"
+          }
+        ]
+      }
+    },
+    "success": {
+      "fields": {
+        "Success 200": [
+          {
+            "group": "Success 200",
+            "type": "String",
+            "optional": false,
+            "field": "name",
+            "description": "<p>Category name.</p>"
+          },
+          {
+            "group": "Success 200",
+            "type": "String",
+            "optional": false,
+            "field": "description",
+            "description": "<p>Category description.</p>"
+          }
+        ]
+      },
+      "examples": [
+        {
+          "title": "Success-Response:",
+          "content": "HTTP/1.1 200 OK\n{\n\t    \"_id\": \"5cdef979fb6fc00aaf763f20\",\n\t    \"name\": \"alphabet\",\n\t    \"description\": \"contains the alphabet letters\"\n}",
+          "type": "json"
+        }
+      ]
+    },
+    "error": {
+      "fields": {
+        "Error 4xx": [
+          {
+            "group": "Error 4xx",
+            "optional": false,
+            "field": "CategoryNotFound",
+            "description": "<p>The id of the Category was not found.</p>"
+          }
+        ]
+      },
+      "examples": [
+        {
+          "title": "Error-Response:",
+          "content": "HTTP/1.1 404 Not Found\n{\n  \"error\": \"CategoryNotFound\"\n}",
+          "type": "json"
+        }
+      ]
+    },
+    "version": "0.0.0",
+    "filename": "routes/index.js",
+    "groupTitle": "Category"
+  },
+  {
+    "type": "get",
+    "url": "/pictograms/:id",
+    "title": "Request Pictogram information",
+    "name": "GetPictogram",
+    "group": "Pictogram",
+    "parameter": {
+      "fields": {
+        "Parameter": [
+          {
+            "group": "Parameter",
+            "type": "pictogram_id",
+            "optional": false,
+            "field": "id",
+            "description": "<p>Pictogram unique ID.</p>"
+          }
+        ]
+      }
+    },
+    "success": {
+      "fields": {
+        "Success 200": [
+          {
+            "group": "Success 200",
+            "type": "String",
+            "optional": false,
+            "field": "name",
+            "description": "<p>Pictogram name.</p>"
+          },
+          {
+            "group": "Success 200",
+            "type": "String",
+            "optional": false,
+            "field": "description",
+            "description": "<p>Pictogram description.</p>"
+          },
+          {
+            "group": "Success 200",
+            "type": "String",
+            "optional": false,
+            "field": "img",
+            "description": "<p>Pictogram image.</p>"
+          },
+          {
+            "group": "Success 200",
+            "type": "String",
+            "optional": false,
+            "field": "mp3",
+            "description": "<p>Pictogram sound.</p>"
+          },
+          {
+            "group": "Success 200",
+            "type": "String",
+            "optional": false,
+            "field": "category",
+            "description": "<p>Pictogram category.</p>"
+          }
+        ]
+      },
+      "examples": [
+        {
+          "title": "Success-Response:",
+          "content": "HTTP/1.1 200 OK\n{\n\t\"_id\": \"5c8ff6d5b23f120004e05e7c\",\n\t\"name\": \"a\",\n\t\"description\": \"letter a\",\n\t\"img\": \"https://s3.amazonaws.com/arasaac-img/a.png\",\n\t\"sound\": \"https://s3.amazonaws.com/arasaac-mp3/a.mp3\",\n\t\"category\": {\n\t    \"_id\": \"5cdef979fb6fc00aaf763f20\",\n\t    \"name\": \"alphabet\",\n\t    \"description\": \"contains the alphabet letters\"\n}",
+          "type": "json"
+        }
+      ]
+    },
+    "error": {
+      "fields": {
+        "Error 4xx": [
+          {
+            "group": "Error 4xx",
+            "optional": false,
+            "field": "PictogramNotFound",
+            "description": "<p>The id of the Pictogram was not found.</p>"
+          }
+        ]
+      },
+      "examples": [
+        {
+          "title": "Error-Response:",
+          "content": "HTTP/1.1 404 Not Found\n{\n  \"error\": \"PictogramNotFound\"\n}",
+          "type": "json"
+        }
+      ]
+    },
+    "version": "0.0.0",
+    "filename": "routes/index.js",
+    "groupTitle": "Pictogram"
+  },
+  {
+    "type": "get",
+    "url": "/pictograms/",
+    "title": "Request Pictograms information",
+    "name": "GetPictograms",
+    "group": "Pictogram",
+    "success": {
+      "fields": {
+        "Success 200": [
+          {
+            "group": "Success 200",
+            "type": "String",
+            "optional": false,
+            "field": "name",
+            "description": "<p>Pictogram name.</p>"
+          },
+          {
+            "group": "Success 200",
+            "type": "String",
+            "optional": false,
+            "field": "description",
+            "description": "<p>Pictogram description.</p>"
+          },
+          {
+            "group": "Success 200",
+            "type": "String",
+            "optional": false,
+            "field": "img",
+            "description": "<p>Pictogram image.</p>"
+          },
+          {
+            "group": "Success 200",
+            "type": "String",
+            "optional": false,
+            "field": "mp3",
+            "description": "<p>Pictogram sound.</p>"
+          },
+          {
+            "group": "Success 200",
+            "type": "String",
+            "optional": false,
+            "field": "category",
+            "description": "<p>Pictogram category.</p>"
+          }
+        ]
+      },
+      "examples": [
+        {
+          "title": "Success-Response:",
+          "content": "HTTP/1.1 200 OK\n{\n\t\"_id\": \"5c8ff6d5b23f120004e05e7c\",\n\t\"name\": \"a\",\n\t\"description\": \"letter a\",\n\t\"img\": \"https://s3.amazonaws.com/arasaac-img/a.png\",\n\t\"sound\": \"https://s3.amazonaws.com/arasaac-mp3/a.mp3\",\n\t\"category\": {\n\t    \"_id\": \"5cdef979fb6fc00aaf763f20\",\n\t    \"name\": \"alphabet\",\n\t    \"description\": \"contains the alphabet letters\"\n}",
+          "type": "json"
+        }
+      ]
+    },
+    "error": {
+      "fields": {
+        "Error 4xx": [
+          {
+            "group": "Error 4xx",
+            "optional": false,
+            "field": "PictogramNotFound",
+            "description": "<p>The id of the Pictogram was not found.</p>"
+          }
+        ]
+      },
+      "examples": [
+        {
+          "title": "Error-Response:",
+          "content": "HTTP/1.1 404 Not Found\n{\n  \"error\": \"PictogramNotFound\"\n}",
+          "type": "json"
+        }
+      ]
+    },
+    "version": "0.0.0",
+    "filename": "routes/index.js",
+    "groupTitle": "Pictogram"
+  },
+  {
+    "type": "get",
+    "url": "/users/:id",
+    "title": "Request User information",
+    "name": "getUser",
+    "group": "Users",
+    "parameter": {
+      "fields": {
+        "Parameter": [
+          {
+            "group": "Parameter",
+            "type": "Number",
+            "optional": false,
+            "field": "id",
+            "description": "<p>Users unique ID.</p>"
+          }
+        ]
+      }
+    },
+    "success": {
+      "fields": {
+        "Success 200": [
+          {
+            "group": "Success 200",
+            "type": "String",
+            "optional": false,
+            "field": "email",
+            "description": "<p>Email of the User.</p>"
+          },
+          {
+            "group": "Success 200",
+            "type": "String",
+            "optional": false,
+            "field": "name",
+            "description": "<p>Name of the User.</p>"
+          },
+          {
+            "group": "Success 200",
+            "type": "String",
+            "optional": false,
+            "field": "signupDate",
+            "description": "<p>Signup date of the User.</p>"
+          }
+        ]
+      },
+      "examples": [
+        {
+          "title": "Success-Response:",
+          "content": "HTTP/1.1 200 OK\n{\n        \"signupDate\": \"2019-02-06T14:09:06.725Z\",\n        \"_id\": \"5c5aea8882d7bd2f70b55395\",\n        \"email\": \"arasaac@gmail.com\",\n        \"name\": \"arasaac\",\n}",
+          "type": "json"
+        }
+      ]
+    },
+    "error": {
+      "fields": {
+        "Error 4xx": [
+          {
+            "group": "Error 4xx",
+            "optional": false,
+            "field": "UserNotFound",
+            "description": "<p>The id of the User was not found.</p>"
+          }
+        ]
+      },
+      "examples": [
+        {
+          "title": "Error-Response:",
+          "content": "HTTP/1.1 404 Not Found\n{\n  \"error\": \"UserNotFound\"\n}",
+          "type": "json"
+        }
+      ]
+    },
+    "version": "0.0.0",
+    "filename": "routes/index.js",
+    "groupTitle": "Users"
+  },
+  {
+    "type": "get",
+    "url": "/users",
+    "title": "Request Users information",
+    "name": "getUsers",
+    "group": "Users",
+    "success": {
+      "fields": {
+        "Success 200": [
+          {
+            "group": "Success 200",
+            "type": "String",
+            "optional": false,
+            "field": "email",
+            "description": "<p>Email of the User.</p>"
+          },
+          {
+            "group": "Success 200",
+            "type": "String",
+            "optional": false,
+            "field": "name",
+            "description": "<p>Name of the User.</p>"
+          },
+          {
+            "group": "Success 200",
+            "type": "String",
+            "optional": false,
+            "field": "signupDate",
+            "description": "<p>Signup date of the User.</p>"
+          }
+        ]
+      },
+      "examples": [
+        {
+          "title": "Success-Response:",
+          "content": "HTTP/1.1 200 OK\n{\n        \"signupDate\": \"2019-02-06T14:09:06.725Z\",\n        \"_id\": \"5c5aea8882d7bd2f70b55395\",\n        \"email\": \"arasaac@gmail.com\",\n        \"name\": \"arasaac\",\n}",
+          "type": "json"
+        }
+      ]
+    },
+    "error": {
+      "fields": {
+        "Error 4xx": [
+          {
+            "group": "Error 4xx",
+            "optional": false,
+            "field": "UserNotFound",
+            "description": "<p>The id of the User was not found.</p>"
+          }
+        ]
+      },
+      "examples": [
+        {
+          "title": "Error-Response:",
+          "content": "HTTP/1.1 404 Not Found\n{\n  \"error\": \"UserNotFound\"\n}",
+          "type": "json"
+        }
+      ]
+    },
+    "version": "0.0.0",
+    "filename": "routes/index.js",
+    "groupTitle": "Users"
+  }
+]

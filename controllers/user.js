@@ -77,7 +77,7 @@ function signIn(req, res, next) {
 
                 const token = services.createToken(user);
 
-                req.session.userInfo = { user: user, token: token};
+//                req.session.userInfo = { user: user, token: token};
 
                 res.status(200).send({
                     message: 'Logged in correctly',

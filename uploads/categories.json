@@ -1,0 +1,26 @@
+{"_id":{"$oid":"5d8275917dc2683838acd917"},"name":"comida","description":"contiene pictogrmas relacionados con la comida","__v":{"$numberInt":"0"}}
+{"_id":{"$oid":"5d82759e7dc2683838acd918"},"name":"dias_de_la_semana","description":"contiene pictogrmas relacionados con los días de la semana","__v":{"$numberInt":"0"}}
+{"_id":{"$oid":"5d8275be7dc2683838acd919"},"name":"tecnologia","description":"contiene pictogramas relacionados con la electrónica","__v":{"$numberInt":"0"}}
+{"_id":{"$oid":"5d8275d67dc2683838acd91a"},"name":"juegos_y_deportes","description":"contiene pictogramas relacionados con juegos y deportes","__v":{"$numberInt":"0"}}
+{"_id":{"$oid":"5d8275e37dc2683838acd91b"},"name":"lugares","description":"contiene pictogramas relacionados con lugares","__v":{"$numberInt":"0"}}
+{"_id":{"$oid":"5d8275ef7dc2683838acd91c"},"name":"musica","description":"contiene pictogramas relacionados con la música","__v":{"$numberInt":"0"}}
+{"_id":{"$oid":"5d8275fb7dc2683838acd91d"},"name":"objetos","description":"contiene pictogramas relacionados con los objetos","__v":{"$numberInt":"0"}}
+{"_id":{"$oid":"5d8276037dc2683838acd91e"},"name":"plantas","description":"contiene pictogramas relacionados con las plantas","__v":{"$numberInt":"0"}}
+{"_id":{"$oid":"5d8276107dc2683838acd91f"},"name":"prohibiciones","description":"contiene pictogramas relacionados con prohibiciones","__v":{"$numberInt":"0"}}
+{"_id":{"$oid":"5d8276227dc2683838acd920"},"name":"religion","description":"contiene pictogramas relacionados con la religión","__v":{"$numberInt":"0"}}
+{"_id":{"$oid":"5d82762d7dc2683838acd921"},"name":"ropa","description":"contiene pictogramas relacionados con la ropa","__v":{"$numberInt":"0"}}
+{"_id":{"$oid":"5d8275447dc2683838acd915"},"name":"animales","description":"contiene pictogramas relacionados con los animales","__v":{"$numberInt":"0"}}
+{"_id":{"$oid":"5d8276377dc2683838acd922"},"name":"tiempo","description":"contiene pictogramas relacionados con el tiempo","__v":{"$numberInt":"0"}}
+{"_id":{"$oid":"5cded660491c402bdc544129"},"name":"abecedario","description":"contiene pictogramas relacionados con el abecedario","__v":{"$numberInt":"0"}}
+{"_id":{"$oid":"5d8275817dc2683838acd916"},"name":"cocina","description":"contiene pictogramas relacionados con la cocina","__v":{"$numberInt":"0"}}
+{"_id":{"$oid":"5d8276447dc2683838acd923"},"name":"vehiculos","description":"contiene pictogramas relacionados con los vehículos","__v":{"$numberInt":"0"}}
+{"_id":{"$oid":"5d83e1581cc4e83dccb7eec0"},"name":"salud","description":"contiene pictogramas relacionados con la salud","__v":{"$numberInt":"0"}}
+{"_id":{"$oid":"5d83e1841cc4e83dccb7eec1"},"name":"verbos","description":"contiene pictogramas relacionados con los verbos","__v":{"$numberInt":"0"}}
+{"_id":{"$oid":"5d83e1321cc4e83dccb7eebf"},"name":"preguntas","description":"contiene pictogramas relacionados con las preguntas","__v":{"$numberInt":"0"}}
+{"_id":{"$oid":"5d83e0e21cc4e83dccb7eebe"},"name":"personas_y_profesiones","description":"contiene pictogramas relacionados con las personas y profesiones","__v":{"$numberInt":"0"}}
+{"_id":{"$oid":"5eb6cd19422ff22dd4e3c95e"},"name":"adjetivos","description":"contiene pictogramas relacionados con los adjetivos"}
+{"_id":{"$oid":"5eb6cfde3bb6e2374cf48ecb"},"name":"colores","description":"contiene pictogramas relacionados con los colores","__v":{"$numberInt":"0"}}
+{"_id":{"$oid":"5eb6cfeaee1a443b60c57d19"},"name":"cuerpo","description":"contiene pictogramas relacionados con el cuerpo","__v":{"$numberInt":"0"}}
+{"_id":{"$oid":"5eb6cffc3bb6e2374cf48ecc"},"name":"estados_de_animo","description":"contiene pictogramas relacionados con los estados de animo","__v":{"$numberInt":"0"}}
+{"_id":{"$oid":"5eb6d006ee1a443b60c57d1a"},"name":"numeros","description":"contiene pictogramas relacionados con los numeros","__v":{"$numberInt":"0"}}
+{"_id":{"$oid":"5eb6d01cee1a443b60c57d1b"},"name":"signos_ortograficos","description":"contiene pictogramas relacionados con los signos ortograficos","__v":{"$numberInt":"0"}}

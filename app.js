@@ -5,9 +5,9 @@ const bodyParser = require('body-parser');
 const hbs = require('express-handlebars');
 const app = express();
 const api = require('./routes');
-const session = require('express-session');
+//const session = require('express-session');
 
-app.use(session({ resave: false, saveUninitialized: false, secret: '123456789' }));
+//app.use(session({ resave: false, saveUninitialized: false, secret: '123456789' }));
 app.use(express.static('./public'));
 app.use(bodyParser.urlencoded({ extended: true }));
 app.use(bodyParser.json());
