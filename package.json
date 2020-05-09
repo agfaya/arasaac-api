@@ -24,7 +24,7 @@
     "xlsx-to-json": "^0.3.0"
   },
   "devDependencies": {
-    "nodemon": "^1.18.9"
+    "nodemon": "^2.0.3"
   },
   "apidoc": {
     "version": "1.0.0",
