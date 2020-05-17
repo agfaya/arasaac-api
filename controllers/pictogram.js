@@ -45,7 +45,7 @@ function getPictogram (req, res){
             return res.status(400).send({message: 'Id not valid'});
         }
         if (!pictogram) {
-            logger.error(err.message);
+            logger.error('Pictogram not found');
             return res.status(404).send({message: 'Pictogram not found'});
         }
         Category.populate(pictogram, {path: "category"}, function (err, pictogram) {
