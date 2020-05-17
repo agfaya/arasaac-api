@@ -6,12 +6,13 @@
     <input type="submit" value="Login">
     <br>
     <br>
-    <p id="token"></p>
+    <p id="response"></p>
 </form>
 
 <script type="text/javascript">
     const formLogin = document.querySelector('#login');
-
+	var upload="http://localhost:3000/pictograms/upload";
+	
     formLogin.addEventListener('submit', event => {
         event.preventDefault();
         const formData = new FormData(formLogin);
@@ -30,8 +31,11 @@
 		})
         .then(res => res.json())
         .then(data => {
-            localStorage.setItem('token', data.token);
-            document.getElementById("token").innerHTML = localStorage.getItem('token');
+			if(data.token){
+				localStorage.setItem('token', data.token);
+				//document.getElementById("token").innerHTML = localStorage.getItem('token');
+				location.href=upload;
+			} else document.getElementById("response").innerHTML = "Usuario o contraseña incorrectos.";
         })
     })
 </script>
