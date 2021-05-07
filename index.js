@@ -9,7 +9,8 @@ const logger = require('./services/logger');
 const cluster = require('cluster');
 
 const opts = {
-    useNewUrlParser: true
+    useNewUrlParser: true,
+    useUnifiedTopology: true
 };
 
 mongoose.connect(config.db, opts);
@@ -22,9 +23,8 @@ mongoose.connection.on('error', function(err){
     logger.error(`Error establishing a database connection: ${err}`);
 });
 
-
 mongoose.connection.on('disconnected', function () {
-    logger.warn('Database disconnected');
+    logger.error('Database disconnected');
 });
 
 process.on('SIGINT', function(){
