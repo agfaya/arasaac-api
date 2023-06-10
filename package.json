@@ -19,8 +19,8 @@
     "moment": "^2.29.2",
     "mongoose": "^5.7.5",
     "multer": "^1.4.1",
-    "public-ip": "^3.2.0",
-    "winston": "^3.3.0",
+    "public-ip": "^5.0.0",
+    "winston": "^3.2.1",
     "xlsx-to-json": "^0.3.0"
   },
   "devDependencies": {
