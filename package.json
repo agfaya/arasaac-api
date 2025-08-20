@@ -11,14 +11,14 @@
   "license": "MIT",
   "dependencies": {
     "bcrypt-nodejs": "0.0.3",
-    "body-parser": "^1.20.1",
-    "express": "^4.20.0",
+    "body-parser": "^1.20.3",
+    "express": "^4.21.2",
     "express-handlebars": "^7.0.0",
     "express-validator": "^6.2.0",
     "jwt-simple": "^0.5.5",
     "moment": "^2.24.0",
-    "mongoose": "^8.0.0",
-    "multer": "^2.0.1",
+    "mongoose": "^8.9.5",
+    "multer": "^2.0.2",
     "public-ip": "^5.0.0",
     "winston": "^3.2.1",
     "xlsx-to-json": "^0.3.0"
