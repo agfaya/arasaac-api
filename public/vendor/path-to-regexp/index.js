@@ -33,7 +33,8 @@ var PATH_REGEXP = new RegExp([
  * @return {String}
  */
 function escapeGroup (group) {
-  return group.replace(/([=!:$\/()])/g, '\\$1');
+  // First escape all backslashes, then escape special characters.
+  return group.replace(/\\/g, '\\\\').replace(/([=!:$\/()])/g, '\\$1');
 }
 
 /**
