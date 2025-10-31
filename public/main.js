@@ -210,6 +210,15 @@ require([
      * @param index where to insert items
      * @return boolean true if any good-looking (i.e. with a group identifier) <h1> tag was found
      */
+    // Strip all HTML tags robustly
+    function stripHtmlTags(str) {
+        var prev;
+        do {
+            prev = str;
+            str = str.replace(/<\/?[^>]+(>|$)/g, '');
+        } while (str !== prev);
+        return str;
+    }
     function add_nav(nav, content, index) {
         var found_level1 = false;
         if ( ! content) {
@@ -219,7 +228,7 @@ require([
         if ( topics ) {
           topics.forEach(function(entry) {
               var level = entry.substring(2,3);
-              var title = entry.replace(/<.+?>/g, '');    // Remove all HTML tags for the title
+              var title = stripHtmlTags(entry);    // Remove all HTML tags for the title
               var entry_tags = entry.match(/id="api-([^\-]+)(?:-(.+))?"/);    // Find the group and name in the id property
               var group = (entry_tags ? entry_tags[1] : null);
               var name = (entry_tags ? entry_tags[2] : null);
