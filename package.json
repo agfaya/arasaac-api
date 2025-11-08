@@ -21,7 +21,8 @@
     "multer": "^2.0.2",
     "public-ip": "^5.0.0",
     "winston": "^3.2.1",
-    "xlsx-to-json": "^0.3.0"
+    "xlsx-to-json": "^0.3.0",
+    "express-rate-limit": "^8.2.1"
   },
   "devDependencies": {
     "nodemon": "^2.0.22"
