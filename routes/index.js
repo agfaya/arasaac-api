@@ -1,6 +1,7 @@
 'use strict';
 
 const express = require('express');
+const rateLimit = require('express-rate-limit');
 const pictogramCtrl = require('../controllers/pictogram');
 const categoryCtrl = require('../controllers/category');
 const userCtrl = require('../controllers/user');
@@ -8,6 +9,13 @@ const searchCtrl = require('../controllers/search');
 const auth = require('../middlewares/auth');
 const api = express.Router();
 
+// Rate limiter: max 100 requests per 15 min window per IP
+const categoriesLimiter = rateLimit({
+  windowMs: 15 * 60 * 1000, // 15 minutes
+  max: 100, // Limit each IP to 100 requests per windowMs
+  standardHeaders: true, 
+  legacyHeaders: false,
+});
 /**
  * @api {get} /pictograms/ Request Pictograms information
  * @apiName GetPictograms
@@ -112,7 +120,7 @@ api.post('/pictograms/upload', auth, pictogramCtrl.loadPictograms);
  *     }
  */
 
-api.get('/categories', auth, categoryCtrl.getCategories);
+api.get('/categories', categoriesLimiter, auth, categoryCtrl.getCategories);
 
 /**
  * @api {get} /categories/:id Request Category information
